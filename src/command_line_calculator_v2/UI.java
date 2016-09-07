@@ -1,9 +1,11 @@
 package command_line_calculator_v2;
 /*
- *  The UI class contains a series of methods that return menu selections in the form of integers.
- *  The goCalc() method contains a switch statement. The case that executes depends on the return value
- *  of the integer chosen by the user.
  *  This class is just a series of menus.
+ *  
+ *  The UI class contains a series of methods that return menu selections in the form of integers.
+ *  The goCalc() method receives the integers and runs them through a switch statement. 
+ *  The case that executes depends on the return value of the integer chosen by the user.
+ *  
  */
 import java.util.*;
 /*
@@ -41,12 +43,13 @@ public class UI {
 		return choice;
 	}
 	
-	
+	// The goCalc() method is the first method executed. 
 	static void goCalc(){
 		switch(mainMenu()){
 		case 1:
 			BasicCalculator.runBasicCalculator();
 		case 2:
+			// Currently, most methods in the FinancialFunctions class lack signatures. 
 			FinancialFunctions finance = new FinancialFunctions();
 			switch(financeMenu()){
 			case 1:

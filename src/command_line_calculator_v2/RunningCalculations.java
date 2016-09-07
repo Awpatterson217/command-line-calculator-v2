@@ -1,5 +1,11 @@
 package command_line_calculator_v2;
 /*
+ * The RunningCalculations class uses a switch statement and
+ * performs the requested calculations. This class is
+ * instantiated in the Methods class. 
+ */
+
+/*
  * @author Adam Patterson
  */
 public class RunningCalculations {

@@ -1,5 +1,15 @@
 package command_line_calculator_v2;
-
+/*
+ *  The Methods class contains two static methods:
+ *                  startCalc() and keepGoing(). 
+ *                  
+ *  These two static methods accepts user input.
+ *  
+ *  An instance of the RunningCalculations class is created: 
+ *                  runningAnswer(num1, firstOperator, num2)
+ *                                     or:
+ *                  runningAnswer(nextOperator, nextNumber)
+ */
 import java.util.Scanner;
 /*
  * @author Adam Patterson
@@ -7,14 +17,14 @@ import java.util.Scanner;
 public class Methods {
 	static Scanner userInput = new Scanner(System.in);
 	
-	// The startCalc method is the first method executed.
+	// startCalc() is the first method executed.
 	static void startCalc(){
 		
 		// An instance of the RunningCalculation class.
 		RunningCalculations runningAnswer = new RunningCalculations();
 		
 		
-		// A simple menu which presents the user with a key, each operator is associated with a number.
+		// A simple menu which presents the user with a key.
 		// More operators can be added.
 		System.out.println("Operators");
 		System.out.println("+: Plus");
@@ -38,22 +48,22 @@ public class Methods {
 		double num2 = userInput.nextDouble();
 		System.out.print("\n");
 		
-		// Executes the firstCalc method. This method takes values in the same order captured. 
+		// Executes firstCalc(). This method takes values in the same order captured. 
 		runningAnswer.firstCalc(num1, firstOperator, num2);
 		System.out.print("Current answer: ");
 		System.out.println(runningAnswer.getCurrentAnswer());
 		
 		
-	} // End startCalc.
+	} // End startCalc().
 	
-	// The keepGoing method is the second and last method executed.
+	// keepGoing() is the second and last method executed.
 	static void keepGoing(){
 	
 		
 		// Creates an instance of the RunningCalculations class.
 		RunningCalculations runningAnswer = new RunningCalculations();
 		
-		// Allows the user to perform another operation on a new number(nextNum) and currentAnswer.
+		// Allows the user to perform another operation on nextNum and currentAnswer.
 		System.out.println("Next operator: ");
 		String nextOperator = userInput.next();
 		System.out.print("\n");
@@ -63,12 +73,12 @@ public class Methods {
 		double nextNumber = userInput.nextDouble();
 		System.out.print("\n");
 
-		// Performs the nextCalc method.
+		// Performs nextCalc().
 		runningAnswer.nextCalc(nextOperator, nextNumber);
 		System.out.print("Current Answer: ");
 		System.out.println(runningAnswer.getCurrentAnswer());
 		
 	
-	} // End keepGoing.
+	} // End keepGoing().
 	
 } // End Methods class.
