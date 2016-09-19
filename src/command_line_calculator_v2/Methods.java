@@ -52,6 +52,7 @@ public class Methods {
 		runningAnswer.firstCalc(num1, firstOperator, num2);
 		System.out.print("Current answer: ");
 		System.out.println(runningAnswer.getCurrentAnswer());
+		History.basicHistoryStack.push(runningAnswer.getCurrentAnswer());
 		
 		
 	} // End startCalc().
@@ -64,8 +65,12 @@ public class Methods {
 		RunningCalculations runningAnswer = new RunningCalculations();
 		
 		// Allows the user to perform another operation on nextNum and currentAnswer.
-		System.out.println("Next operator: ");
+		System.out.println("Next operator (or 'exit'): ");
 		String nextOperator = userInput.next();
+		
+		if(nextOperator.equalsIgnoreCase("exit"))
+			UI.goCalc();
+		
 		System.out.print("\n");
 
 		// Allows the user to enter the next number.
@@ -77,6 +82,7 @@ public class Methods {
 		runningAnswer.nextCalc(nextOperator, nextNumber);
 		System.out.print("Current Answer: ");
 		System.out.println(runningAnswer.getCurrentAnswer());
+		History.basicHistoryStack.push(runningAnswer.getCurrentAnswer());
 		
 	
 	} // End keepGoing().

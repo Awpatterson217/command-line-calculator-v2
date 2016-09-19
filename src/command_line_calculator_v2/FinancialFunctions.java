@@ -22,6 +22,8 @@ public class FinancialFunctions {
 		double numOfYears = userInput.nextDouble();
 		value = amount * Math.pow((1+interestRate), numOfYears);
 		return value;
+		
+
 	}// End futureValue()
 	
 	// The presentValue method will allow the user to calculate the present value of some amount

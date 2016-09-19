@@ -22,7 +22,7 @@ public class UI {
 		
 		System.out.println("1: Basic Calculator");
 		System.out.println("2: Finance Functions");
-		System.out.println("3: TBC");
+		System.out.println("3: History");
 	
 		int choice = userInput.nextInt();
 		return choice;
@@ -48,18 +48,40 @@ public class UI {
 		switch(mainMenu()){
 		case 1:
 			BasicCalculator.runBasicCalculator();
+			break;
+			
 		case 2:
 			// Currently, most methods in the FinancialFunctions class lack signatures. 
 			FinancialFunctions finance = new FinancialFunctions();
 			switch(financeMenu()){
 			case 1:
-				System.out.println(finance.futureValue());
+				System.out.println("Answer: $" + finance.futureValue());
+				System.out.println("");
+				History.finHistoryStack.push(finance.getValue());
+				UI.goCalc();
 			case 2:
+				
+				History.finHistoryStack.push(finance.getValue());
+				UI.goCalc();
 			case 3:
+				
+				History.finHistoryStack.push(finance.getValue());
+				UI.goCalc();
 			case 4:
+				
+				History.finHistoryStack.push(finance.getValue());
+				UI.goCalc();
 			case 5:
 				goCalc();
 			}
+		case 3:
+			System.out.print("Financial Calculations: ");
+			History.printFinHistory();
+			
+			System.out.print("Basic Calculations: ");
+			History.printBasicHistory();
+			System.out.println("");
+			goCalc();
 		default:
 			System.out.println("That was not a valid choice.");
 		}		
