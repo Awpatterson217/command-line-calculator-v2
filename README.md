@@ -1,2 +1,3 @@
 # command-line-calculator-v2
-This version includes more complicated functions.
+Financial calculations and calculation history have been added to this version.
+
