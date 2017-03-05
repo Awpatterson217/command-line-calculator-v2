@@ -12,46 +12,38 @@ import java.util.*;
  * @author Adam Patterson
  */
 public class UI {
-
 	static Scanner userInput = new Scanner(System.in);
-	
 	static int mainMenu(){
 		System.out.println("*************");
 		System.out.println("* Main Menu *");
 		System.out.println("*************\n");
-		
 		System.out.println("1: Basic Calculator");
 		System.out.println("2: Finance Functions");
 		System.out.println("3: History");
-	
 		int choice = userInput.nextInt();
 		return choice;
 	}
-	
 	static int financeMenu(){
 		System.out.println("***********************");
 		System.out.println("* Financial Functions *");
 		System.out.println("***********************\n");
-
 		System.out.println("1: Future Value");
 		System.out.println("2: Present Value");
 		System.out.println("3: Net Present Value");
 		System.out.println("4: Amortization Schedule");
 		System.out.println("5: Home");
-		
 		int choice = userInput.nextInt();
 		return choice;
 	}
-	
 	// The goCalc() method is the first method executed. 
 	static void goCalc(){
 		switch(mainMenu()){
 		case 1:
 			BasicCalculator.runBasicCalculator();
 			break;
-			
 		case 2:
-			// Currently, most methods in the FinancialFunctions class lack signatures. 
+			// Most methods in the FinancialFunctions class lack signatures.
+                        // Feel free to make them...  
 			FinancialFunctions finance = new FinancialFunctions();
 			switch(financeMenu()){
 			case 1:
@@ -60,15 +52,12 @@ public class UI {
 				History.finHistoryStack.push(finance.getValue());
 				UI.goCalc();
 			case 2:
-				
 				History.finHistoryStack.push(finance.getValue());
 				UI.goCalc();
 			case 3:
-				
 				History.finHistoryStack.push(finance.getValue());
 				UI.goCalc();
 			case 4:
-				
 				History.finHistoryStack.push(finance.getValue());
 				UI.goCalc();
 			case 5:
@@ -77,7 +66,6 @@ public class UI {
 		case 3:
 			System.out.print("Financial Calculations: ");
 			History.printFinHistory();
-			
 			System.out.print("Basic Calculations: ");
 			History.printBasicHistory();
 			System.out.println("");
