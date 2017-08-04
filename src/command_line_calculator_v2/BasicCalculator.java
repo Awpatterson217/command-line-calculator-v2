@@ -18,7 +18,7 @@ public class BasicCalculator {
 		// This application loops endlessly
 		while(calcOn){
 			// The keepGoing method executes the selected operation 
-			// on currentAnswer and nextNum. (doubles)	  
+			// on currentAnswer and nextNum.	  
 			Methods.keepGoing();
 		}
 	}	
